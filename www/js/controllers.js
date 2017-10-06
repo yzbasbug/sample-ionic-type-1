@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout,$state) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -28,6 +28,13 @@ angular.module('starter.controllers', [])
   $scope.login = function() {
     $scope.modal.show();
   };
+  $scope.goPage = function(page) {
+	  console.log($state);
+	  $state.go(page);
+  };
+  $scope.alert = function(alertText) {
+	  alert(alertText);
+  };
 
   // Perform the login action when the user submits the login form
   $scope.doLogin = function() {
@@ -43,12 +50,12 @@ angular.module('starter.controllers', [])
 
 .controller('PlaylistsCtrl', function($scope) {
   $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
+    { title: 'Taşıma', id: 1 },
+    { title: 'Temizlik', id: 2 },
+    { title: 'Diğer iş', id: 3 },
+    { title: 'Kazık çakma', id: 4 },
+    { title: 'Yükleme', id: 5 },
+    { title: 'Diğer', id: 6 }
   ];
 })
 

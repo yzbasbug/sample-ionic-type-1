@@ -1,12 +1,12 @@
 
 {
-  "name": "My Ionic App",
-  "short_name": "My Ionic App",
+  "name": "NOS Terminal App",
+  "short_name": "NOS Terminal App",
   "start_url": "index.html",
   "display": "standalone",
   "icons": [{
-    "src": "icon.png",
-    "sizes": "512x512",
+    "src": "erdemir.png",
+    "sizes": "650x464",
     "type": "image/png"
   }]
 }
