@@ -1,1 +1,7 @@
 /* Empty. Add your own CSS if you like */
+.item-center{
+    position: absolute;
+    left: 50%;
+    margin-left: -40px;
+    margin-top: -3px;
+}
