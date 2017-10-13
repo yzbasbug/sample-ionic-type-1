@@ -1,7 +1,134 @@
 /* Empty. Add your own CSS if you like */
-.item-center{
-    position: absolute;
-    left: 50%;
-    margin-left: -40px;
-    margin-top: -3px;
+.item-center {
+	position: absolute;
+	left: 50%;
+	margin-left: -40px;
+	margin-top: -3px;
+}
+
+HTML  CSS  JS  Result
+Edit on 
+body {
+	cursor: url('https://ionicframework.com/img/finger.png'), auto;
+}
+
+.button-round {
+	border-radius: 20px;
+}
+
+.col {
+	text-align: center !important;
+	vertical-align: middle;
+	display: flex;
+}
+
+.scroll {
+	height: 100% !important;
+	background: #eeecf3;
+	display: -webkit-box !important;
+	display: -moz-box !important;
+	display: -ms-flexbox !important;
+	display: -webkit-flex !important;
+	display: flex !important;
+	-webkit-box-direction: normal !important;
+	-moz-box-direction: normal !important;
+	-webkit-box-orient: vertical !important;
+	-moz-box-orient: vertical !important;
+	-webkit-flex-direction: column !important;
+	-ms-flex-direction: column !important;
+	flex-direction: column !important;
+}
+
+.row {
+	-webkit-box-flex: 0 !important;
+	-moz-box-flex: 0 !important;
+	-webkit-flex: 0 1 50% !important;
+	-ms-flex: 0 1 50% !important;
+	flex: 0 1 50% !important;
+}
+
+.header-badge {
+	background-color: transparent;
+	color: #AAAAAA;
+	z-index: 1;
+	display: inline-block;
+	padding: 6px 16px;
+	min-width: 10px;
+	border-radius: 20px;
+	vertical-align: baseline;
+	text-align: center;
+	white-space: nowrap;
+	font-weight: bold;
+	font-size: 20px;
+	line-height: 32px;
+	position: absolute !important;
+	top: -12px !important;
+	right: -6px !important;
+	left: unset;
+	bottom: unset;
+}
+
+.button-large {
+	font-size: 60px;
+}
+
+.button-large .icon:before, .button-large.icon:before, .button-large.icon-left:before,
+	.button-large.icon-right:before {
+	font-size: 96px;
+}
+
+.button.button-large {
+	color: #2d2c2c;
+	font-weight: bold;
+	margin-bottom: 0;
+}
+
+.bar-header {
+	height: 50px; /*just an example*/
+}
+
+.bar-header .title {
+	line-height: 50px;
+}
+
+.bar .title {
+	height: 50px;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.has-header {
+	top: 50px;
+}
+
+.myTitle {
+	width: 100%;
+	display: block;
+}
+
+.mygrid .card {
+	width: 100%;
+	background: #ef473a;
+	margin: 0;
+}
+.mygrid .card .middle-center {
+    vertical-align: middle;
+    margin-top:40px;
+}
+
+.mygrid .card .item {
+	width: 100%;
+}
+
+.mygrid .card input {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 5px solid #000;
+	border-radius: 20px;
+	box-sizing: border-box;
+	height: 91px;
+	font-size: 40px;
+	text-align: center;
 }
