@@ -1,0 +1,28 @@
+<ion-view class="flexPage" view-title="İş Emirleri"> <ion-content>
+<div class="row"  ng-repeat="task in tasks">
+	<div class="col mygrid">
+		<button
+			class="button button-large button-calm icon-right  button-full  button-round"
+			ng-click="goLink('app.task',{{task.id}})">{{task.title}}</button>
+	</div>
+</div>
+
+<div class="row footer">
+	<div class="col mygrid">
+		<button
+			class="button button-large icon-center  button-assertive  button-full  button-round ion-arrow-left-a"
+			ng-click="goPage('app.home')"/>
+	</div>
+	<div class="col mygrid">
+		<button
+			class="button button-large icon-center button-energized button-full  button-round ion-home"
+			ng-click="goPage('app.home')"/>
+	</div>
+	<div class="col mygrid">
+		<button
+			class="button button-large icon-center  button-balanced button-full  button-round ion-arrow-right-a"
+			ng-click="goPage('app.lists')"/>
+	</div>
+</div>
+</ion-content> </ion-view>
+

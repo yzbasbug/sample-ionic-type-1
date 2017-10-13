@@ -41,6 +41,37 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     }
   })
   
+  .state('app.tasks', {
+    url: '/tasks',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/tasks.html',
+        controller: 'TasklistsCtrl'
+      }
+    }
+  })
+  
+  .state('app.messages', {
+    url: '/messages',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/messages.html',
+        controller: 'MessagesCtrl'
+      }
+    }
+  })
+  
+  .state('app.message', {
+    url: '/message',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/message.html',
+        controller: 'MessageCtrl',
+        params:      {'messageId': null}
+      }
+    }
+  })
+  
    .state('app.home', {
     url: '/home',
     views: {
@@ -50,30 +81,13 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     }
   })
 
-  .state('app.browse', {
-      url: '/browse',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/browse.html'
-        }
-      }
-    })
-    .state('app.lists', {
-      url: '/lists',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/playlists.html',
-          controller: 'PlaylistsCtrl'
-        }
-      }
-    })
-
-  .state('app.single', {
-    url: '/playlists/:playlistId',
+  .state('app.task', {
+    url: '/task',
     views: {
       'menuContent': {
-        templateUrl: 'templates/playlist.html',
-        controller: 'PlaylistCtrl'
+        templateUrl: 'templates/task.html',
+        controller: 'TaskCtrl',
+        params:      {'taskId': null}
       }
     }
   });

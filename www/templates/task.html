@@ -1,0 +1,44 @@
+<ion-view class="flexPage" view-title="İş Emri Ayrıntıları"> <ion-content>
+<ion-header-bar class="task">
+<h1 class="title">Curuf Taşıma</h1>
+</ion-header-bar>
+<div class="row card taskRow">
+	<div class="col mygrid">
+		<h1 text-center class="myTitle">Açıklamalar: Cürüf şuradan şuraya taşınacaktır. 10 ton mal sevkiyatı yapılacaktır. Taşınacak ham madde Ahmet Bey'e teslim edilecektir.</h1>
+	</div>
+</div>
+<div class="row card">
+	<div class="col mygrid">
+		<button
+			class="button button-large button-assertive  button-full  button-round"
+			ng-click="alert('Not implemented yet!')"><i class="ion-stop"></i><div>Bitir</div> </button>
+	</div>
+	<div class="col mygrid">
+		<button
+			class="button button-large button-energized button-full  button-round "
+			ng-click="alert('Not implemented yet!')"><i class="ion-pause"></i><div>Duraklat</div>  </button>
+	</div>
+	<div class="col mygrid">
+		<button
+			class="button button-large  button-balanced button-full  button-round "
+			ng-click="alert('Not implemented yet!')"><i class="ion-play"></i><div>Başlat</div>  </button>
+	</div>
+</div>
+<div class="row footer">
+	<div class="col mygrid">
+		<button
+			class="button button-large icon-center  button-assertive  button-full  button-round ion-arrow-left-a"
+			ng-click="goPage('app.tasks')"/>
+	</div>
+	<div class="col mygrid">
+		<button
+			class="button button-large icon-center button-energized button-full  button-round ion-home"
+			ng-click="goPage('app.home')"/>
+	</div>
+	<div class="col mygrid">
+		<button
+			class="button button-large icon-right  button-balanced button-full  button-round "
+			ng-click="alert('Not implemented yet!')"><i class="ion-bug"></i><div>Arıza Bildir</div></button>
+	</div>
+</div>
+</ion-content> </ion-view>

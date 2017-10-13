@@ -29,9 +29,13 @@ angular.module('starter.controllers', [])
     $scope.modal.show();
   };
   $scope.goPage = function(page) {
-	  console.log($state);
 	  $state.go(page);
   };
+  
+  $scope.goLink = function(page,taskId) {
+	  $state.go(page,{'taskId':taskId});
+  };
+  
   $scope.alert = function(alertText) {
 	  alert(alertText);
   };
@@ -48,16 +52,111 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Taşıma', id: 1 },
-    { title: 'Temizlik', id: 2 },
-    { title: 'Diğer iş', id: 3 },
-    { title: 'Kazık çakma', id: 4 },
-    { title: 'Yükleme', id: 5 },
-    { title: 'Diğer', id: 6 }
+.controller('TasklistsCtrl', function($scope) {
+  $scope.tasks = [
+    { title: 'Curuf Taşıma', id: 1 },
+    { title: 'Alan Kazısı', id: 2 },
+    { title: 'Ham Madde Taşıma', id: 3 },
+    { title: 'Kazı Çalışması', id: 4 }
   ];
 })
 
-.controller('PlaylistCtrl', function($scope, $stateParams) {
+.controller('TaskCtrl', function($scope,$stateParams) {
+	console.log($stateParams);
+})
+
+.controller('MessagesCtrl', function($scope) {
+	 $scope.messages = [
+		    { title: 'Sevkiyat Hk.', id: 1, from: 'Karayolu Daire Başkanlığı', content:'' },
+		    { title: 'Sevkiyat Hk.', id: 2, from: 'Demiryolu Daire Başkanlığı', content:''  },
+		    { title: 'Sevkiyat Hk.', id: 3, from: 'Karayolu Daire Başkanlığı', content:''  },
+		    { title: 'Sevkiyat Hk.', id: 4, from: 'Demiryolu Daire Başkanlığı', content:''  }
+		  ];
+})
+
+.controller('MessageCtrl', function($scope,$stateParams, $timeout, $ionicScrollDelegate) {
+	 $scope.hideTime = true;
+
+	  var alternate,
+	    isIOS = ionic.Platform.isWebView() && ionic.Platform.isIOS();
+
+	  $scope.sendMessage = function() {
+	    alternate = !alternate;
+
+	    var d = new Date();
+	  d = d.toLocaleTimeString().replace(/:\d+ /, ' ');
+
+	    $scope.messages.push({
+	      userId: alternate ? '12345' : '54321',
+	      text: $scope.data.message,
+	      time: d
+	    });
+
+	    delete $scope.data.message;
+	    $ionicScrollDelegate.scrollBottom(true);
+
+	  };
+
+
+	  $scope.inputUp = function() {
+	    if (isIOS) $scope.data.keyboardHeight = 216;
+	    $timeout(function() {
+	      $ionicScrollDelegate.scrollBottom(true);
+	    }, 300);
+
+	  };
+
+	  $scope.inputDown = function() {
+	    if (isIOS) $scope.data.keyboardHeight = 0;
+	    $ionicScrollDelegate.resize();
+	  };
+
+	  $scope.closeKeyboard = function() {
+	    // cordova.plugins.Keyboard.close();
+	  };
+
+
+	  $scope.data = {};
+	  $scope.myId = '12345';
+	  $scope.messages = [];
+})
+
+.directive('input', function($timeout) {
+  return {
+    restrict: 'E',
+    scope: {
+      'returnClose': '=',
+      'onReturn': '&',
+      'onFocus': '&',
+      'onBlur': '&'
+    },
+    link: function(scope, element, attr) {
+      element.bind('focus', function(e) {
+        if (scope.onFocus) {
+          $timeout(function() {
+            scope.onFocus();
+          });
+        }
+      });
+      element.bind('blur', function(e) {
+        if (scope.onBlur) {
+          $timeout(function() {
+            scope.onBlur();
+          });
+        }
+      });
+      element.bind('keydown', function(e) {
+        if (e.which == 13) {
+          if (scope.returnClose) element[0].blur();
+          if (scope.onReturn) {
+            $timeout(function() {
+              scope.onReturn();
+            });
+          }
+        }
+      });
+    }
+  }
 });
+
+
