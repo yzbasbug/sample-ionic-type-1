@@ -1,11 +1,10 @@
 <ion-view view-title="Mesaj Ayrıntıları"
-	class="messagePage messaging-view"> 
+	class="messagePage messaging-view">
 <div class="subject card">
-<h1 class="title">Kimden : Karayolu Daire Başkanlığı</h1>
-<h1 class="title">Konu : Sevkiyat Hk.</h1>
-</div>	
-<ion-content
-	class="content-stable" on-swipe-left="hideTime = false"
+	<h1 class="title">Kimden : Karayolu Daire Başkanlığı</h1>
+	<h1 class="title">Konu : Sevkiyat Hk.</h1>
+</div>
+<ion-content class="content-stable" on-swipe-left="hideTime = false"
 	on-swipe-right="hideTime = true">
 
 
@@ -24,11 +23,22 @@
 </div>
 
 </ion-content> <ion-footer-bar keyboard-attach class="bar-stable item-input-inset">
-<label class="item-input-wrapper"> <input type="text"
+	<div class="col mygrid">
+		<button
+			class="button button-large icon-center  button-assertive  button-full  button-round ion-arrow-left-a"
+			ng-click="goPage('app.home')" />
+			<button
+			class="button button-large icon-center button-energized button-full  button-round ion-home"
+			ng-click="goPage('app.home')" />
+	</div>
+	<div class="col mygrid">
+		<label class="item-input-wrapper"> <input type="text"
 	placeholder="Type your message"
 	on-return="sendMessage(); closeKeyboard()" ng-model="data.message"
 	on-focus="inputUp()" on-blur="inputDown()" />
 </label>
+	</div>
+
 <button class="button button-clear" ng-click="sendMessage()">
 	Send</button>
 </ion-footer-bar> </ion-view>
