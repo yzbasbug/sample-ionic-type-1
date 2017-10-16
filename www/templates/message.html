@@ -23,22 +23,27 @@
 </div>
 
 </ion-content> <ion-footer-bar keyboard-attach class="bar-stable item-input-inset">
-	<div class="col mygrid">
+	<div class="row">
+	<div class="col col-20 mygrid">
 		<button
 			class="button button-large icon-center  button-assertive  button-full  button-round ion-arrow-left-a"
 			ng-click="goPage('app.home')" />
+	</div>
+	<div class="col  col-20 mygrid">
 			<button
 			class="button button-large icon-center button-energized button-full  button-round ion-home"
 			ng-click="goPage('app.home')" />
 	</div>
-	<div class="col mygrid">
+	<div class="col col-50 mygrid">
 		<label class="item-input-wrapper"> <input type="text"
-	placeholder="Type your message"
-	on-return="sendMessage(); closeKeyboard()" ng-model="data.message"
-	on-focus="inputUp()" on-blur="inputDown()" />
-</label>
+			placeholder="Type your message"
+			on-return="sendMessage(); closeKeyboard()" ng-model="data.message"
+			on-focus="inputUp()" on-blur="inputDown()" />
+		</label>
 	</div>
-
-<button class="button button-clear" ng-click="sendMessage()">
-	Send</button>
+	<div class="col col-10 mygrid">
+	<button class="button button-clear" ng-click="sendMessage()">
+		Send</button>
+	</div>
+	</div>
 </ion-footer-bar> </ion-view>

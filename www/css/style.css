@@ -170,6 +170,9 @@ body {
 	top: 170px;
 	bottom: 105px;
 }
+.messagePage .bar-footer{
+	height: 100px;
+}
 .messagePage .ion-footer-bar.bar-stable.item-input-inset.bar.bar-footer {
     height: 100px;
 }
